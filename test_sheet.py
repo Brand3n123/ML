@@ -30,5 +30,3 @@ label_encoder = LabelEncoder()
 y = label_encoder.fit_transform(y)
 
 print(y)
-
-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
