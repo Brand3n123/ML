@@ -11,7 +11,7 @@ y = data_set.iloc[:, -1:].values
 
 
 #Check first array for missing values and fit/transfor on all rows, columns 1:3 (aka 1 and 2) 
-#with speciffic instructions to replace missing "nan" values with the average of all other values
+#with specific instructions to replace missing "nan" values with the average of all other values
 imputer_object = SimpleImputer(missing_values= np.nan , strategy= "mean")
 imputer_object.fit(x[:, 1:3])
 x[:, 1:3] = imputer_object.transform(x[:, 1:3])
