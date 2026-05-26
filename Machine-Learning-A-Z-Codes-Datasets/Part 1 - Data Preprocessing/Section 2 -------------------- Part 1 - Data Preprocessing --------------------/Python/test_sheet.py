@@ -23,7 +23,7 @@ x[:, 1:3] = imputer_object.transform(x[:, 1:3])
 #Encode the IV with One Hot encoding
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
-transformer = ColumnTransformer(transformers=[("encoder", OneHotEncoder(), [0])], remainder="passthrough")
+transformer = ColumnTransformer(transformers=[("encoder", OneHotEncoder(), [0,])], remainder="passthrough")
 x = np.array(transformer.fit_transform(x))
 
 
