@@ -13,18 +13,14 @@ y = dataset.iloc[:, -1].values
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
-print(X_train)
-print(y_train)
-print(X_test)
-print(y_test)
+
 
 # Feature Scaling
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
-print(X_train)
-print(X_test)
+
 
 # Training the Kernel SVM model on the Training set
 from sklearn.svm import SVC
@@ -44,7 +40,7 @@ cm = confusion_matrix(y_test, y_pred)
 print(cm)
 accuracy_score(y_test, y_pred)
 
-# Visualising the Training set results
+"""# Visualising the Training set results
 from matplotlib.colors import ListedColormap
 X_set, y_set = sc.inverse_transform(X_train), y_train
 X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 10, stop = X_set[:, 0].max() + 10, step = 0.25),
@@ -76,4 +72,4 @@ plt.title('Kernel SVM (Test set)')
 plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
-plt.show()
+plt.show()"""
