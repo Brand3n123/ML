@@ -1,4 +1,4 @@
-# Apriori
+ # Apriori
 
 # Run the following command in the terminal to install the apyori package: pip install apyori
 
@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Data Preprocessing
-dataset = pd.read_csv('Market_Basket_Optimisation.csv', header = None)
-transactions = []
-for i in range(0, 7501):
+dataset = pd.read_csv('Market_Basket_Optimisation.csv', header = None) #specifies the data set has no header, so the first row will be included in the dataset
+transactions = [] #apyori requires dataset to be in a list format
+for i in range(0, 7501): #run through all 7500 transactions in the dataset
   transactions.append([str(dataset.values[i,j]) for j in range(0, 20)])
 
 # Training the Apriori model on the dataset
