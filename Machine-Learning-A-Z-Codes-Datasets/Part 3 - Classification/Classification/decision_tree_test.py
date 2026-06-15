@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-dataset = pd.read_csv('Social_Network_Ads.csv')
+dataset = pd.read_csv('Data.csv')
 x = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
@@ -17,8 +17,8 @@ x_train = sc.fit_transform(x_train) #fit_transform so the feature scaler learns 
 x_test = sc.transform(x_test) #no fit because we don't wan't to also learn from (fit) the test set, only scale on the existing fit
 
 
-from sklearn.ensemble import RandomForestClassifier
-classifier = RandomForestClassifier(n_estimators=70, criterion='entropy', random_state=0)
+from sklearn.tree import DecisionTreeClassifier
+classifier = DecisionTreeClassifier(criterion = 'entropy', random_state=0)
 classifier.fit(x_train, y_train) #trains the model on the inputs/outputs of the training data
 
 
