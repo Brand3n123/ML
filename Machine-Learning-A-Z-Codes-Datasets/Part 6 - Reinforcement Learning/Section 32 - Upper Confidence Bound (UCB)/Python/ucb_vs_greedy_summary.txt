@@ -1,0 +1,4 @@
+UCB total reward: 2178
+Greedy best ad: 4
+Greedy total reward: 2695
+Difference (Greedy - UCB): 517
